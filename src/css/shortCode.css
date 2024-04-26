@@ -47,6 +47,10 @@
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
+
+  .noResults {
+    text-align: center;
+  }
   
   .action {
     display: inline-flex;

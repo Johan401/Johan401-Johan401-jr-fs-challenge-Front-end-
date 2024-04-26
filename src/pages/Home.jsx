@@ -49,7 +49,6 @@ const Home = () => {
         return;
     }
 
-    try {
       const response = await fetch('http://localhost:3000/short_urls', {
         method: 'POST',
         headers: {
@@ -60,9 +59,13 @@ const Home = () => {
       
       if (!response.ok) {
         if(response.status === 422){
-            throw new Error('URL is already created');
+            setError('URL is already created');
+            setLoading(false)
+            return
         } else {
-            throw new Error('Failed to shorten URL (500)');
+            setError('Failed to shorten URL (500)');
+            setLoading(false)
+            return
         }
       }
 
@@ -70,10 +73,6 @@ const Home = () => {
 
       setCreateSuccesfuly("http://localhost:3000/"+data.short_code);
       setLoading(false)
-    } catch (error) {
-      setError('Failed to shorten URL');
-      setLoading(false)
-    }
   };
 
   return (

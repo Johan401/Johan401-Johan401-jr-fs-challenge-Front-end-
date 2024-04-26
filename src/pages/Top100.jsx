@@ -51,16 +51,16 @@ const Top100 = () => {
                 <Loader />
             ) : (
                 <>
-                    <div className='cardContainer'>
                         {currentCodes.length > 0 ? (
-                            // Renderizar solo los códigos para la página actual
-                            currentCodes.map((item) => (
-                                <ShortCodeCard key={item.short_code} props={item} />
-                            ))
+                            <div className='cardContainer'>
+                                {currentCodes.map((item) => (
+                                    <ShortCodeCard key={item.short_code} props={item} />
+                                ))}
+                            </div>
                         ) : (
-                            <h2>No results found</h2>
+                            <h2 className='noResults'>No results found</h2>
                         )}
-                    </div>
+
                     <Pagination setCurrentPage={setCurrentPage} topCodes={topCodes} codesPerPage={codesPerPage} setLoading={setLoading}/>
                 </>
             )}
