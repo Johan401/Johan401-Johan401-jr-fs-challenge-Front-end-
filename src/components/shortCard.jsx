@@ -4,7 +4,7 @@ import "../css/shortCode.css"
 const ShortCodeCard = ({ props }) => {
 
   return (
-    <div className="card">
+    <div data-testid="shortcode-card" className="card">
       <div className="content">
         <span className="title">
           Short Code: {props.short_code}

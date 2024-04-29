@@ -76,11 +76,11 @@ const Home = () => {
   };
 
   return (
-    <div className='homeContainer'>
-      <h1>Shorten URL (LTV)</h1>
-      <form onSubmit={handleSubmit}>
+    <div className='homeContainer' data-testid="home-container">
+      <h1 >Shorten URL (LTV)</h1>
+      <form data-testid="form-container" onSubmit={handleSubmit}>
         <Input placeholder="Enter URL" name="full_url" />
-        <Button disabled={loading} buttonType="submit" text={loading ? "Loading" : "Create"} type="submit">Create</Button>
+        <Button id={"submit-button"} disabled={loading} buttonType="submit" text={loading ? "Loading" : "Create"} type="submit">Create</Button>
         {createSuccesfuly && <h5>ShortCode created: <a href={createSuccesfuly}>{createSuccesfuly}</a></h5>}
       </form>
       <Button disabled={loading} buttonType="normal" text="Show Top 100" onClick={handleClick}></Button>

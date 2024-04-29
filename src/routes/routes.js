@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";import Home from '../pages/Home';
-import Top100 from '../pages/Top100';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from '../pages/Home';
+import Top100 from '../pages/TopShortCodes';
 
 const PagesRoutes = () => {
   return (
